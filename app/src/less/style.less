@@ -1,0 +1,805 @@
+@import "modules/fonts.less";
+@import "modules/palette.less";
+
+body {
+	-wbkit-font-smoothing: antialiased;
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+	&:active {
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		text-decoration: none;
+	}
+}
+
+ul {
+	padding-left: 0;
+}
+
+button:focus {
+	outline: none;
+}
+// 				Mixins
+.back-size(@size) {
+	background-size: @size;
+	-webkit-background-size: @size;
+	-o-background-size: @size;
+	-moz-background-size: @size;
+}
+
+.box-shadow(@attr) {
+	box-shadow: @attr;
+	-webkit-box-shadow: @attr;
+	-o-box-shadow: @attr;
+	-moz-box-shadow: @attr;
+}
+
+.transition(@value, @value2) {
+	transition: @value, @value2;
+	-webkit-transition: @value, @value2;
+	-o-transition: @value, @value2;
+	-moz-transition: @value, @value2;
+}
+
+.transform-translate(@value) {
+	transform: @value;
+	-webkit-transform: @value;
+	-o-transform: @value;
+	-moz-transform: @value;
+}
+//				Header
+.contacts-background {
+	background-color: @contact-back;
+	border-bottom: @step-bord;
+	margin-bottom: 5rem;
+}
+
+//			Mixins
+.phone-mail() { 
+		position: relative;
+		float: right;
+		color: @nav-and-head;
+		font-family: @contact-font;
+}
+
+.headers(@color) {
+	font-family: @header-font;
+	font-size: 3.4rem;
+	line-height: 0.8;
+	color: @color;
+	span {
+		font-family: @smHeader-font;
+		font-size: 1.8rem;
+	}
+}
+//	******************************************
+
+.email {
+	.phone-mail();
+	padding: 0.6rem 0;
+
+	&:before {
+			content: "\f0e0";
+			display: block;
+			position: absolute;
+			font-family: FontAwesome;
+			font-size: 1.7rem;
+			left: -2.3rem;
+			top: 0.7rem;
+		}
+
+	> i, span {
+		margin-right: 0.8rem;
+	}
+}
+
+.contact-facebook {
+	display: inline-block;
+	font-size: 1.6rem;
+	text-align: center;
+	padding: 0.3rem 0.8rem;
+	color: @backColred-txt;
+	background-color: @contact-faceb;
+	border-radius: @bord-radius;
+	margin-right: 3rem;
+	&:hover {
+		background-color: @button-back;
+		color: @backColred-txt;
+	}
+}
+
+.phone-number {
+	.phone-mail();
+	margin-right: 3.5rem;
+	padding: 1rem 2rem 1rem 0;
+	border-right: @step-bord;
+	&:before {
+			content: "\f10b";
+			display: block;
+			position: absolute;
+			font-family: FontAwesome;
+			font-size: 2.2rem;
+			left: -1.6rem;
+			top: 0.5rem;
+		}
+}
+
+.margin-bottom-5 {
+	margin-bottom: 5rem; 
+}
+// Navigation Bar
+.red-hat-logotype {
+	display: block;
+	float: left;
+	margin-right: 1rem;
+}
+
+.text-logotype {
+	float: left;
+	.headers(@nav-and-head);
+}
+
+.nmenu {
+	padding-top: 1rem;
+
+	li {
+		position: relative;
+		a {
+			padding: 0;
+			margin-right: 4rem;
+			color: @nav-and-head;
+			font-family: @navbar-font;
+			font-size: 1.6rem;
+			&:focus {
+				background-color: transparent;
+			}
+			&:visited {
+				background-color: transparent;
+			}
+			&:hover {
+				color: @nav-hover;
+				background-color: transparent;
+			}
+		}
+		&:nth-child(-n+3) {
+			&:after {
+				content: "\f111";
+				display: block;
+				position: absolute;
+				font-family: FontAwesome;
+				font-size: 0.8rem;
+				right: 1.6rem;
+				top: 0.5rem;
+			}
+		}
+	}
+}
+
+.nav-freecons {
+	float: right;
+	display: block;
+	width: 19.5rem;
+	height: 3.8rem;
+	padding-top: 0.7rem;
+	font-size: 1.7rem;
+	text-align: center;
+	font-family: @button-font;
+	background: @button-back;
+	color: @button-colr;
+	border-radius: @bord-radius;
+	&:hover {
+		background-color: @button-hovr;
+		color: @button-colr;
+	}
+}
+//			Banner
+.banner-background {
+	position: relative;
+	background: url(../img/Forest.png) center no-repeat;
+	.back-size(100%);
+	height: 59rem;
+	margin-bottom: 10rem;
+}
+
+.div-opacity {
+	position: absolute;
+	background-color: #000000;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+}
+
+.banner-content {
+	position: relative;
+	text-align: center;
+	padding-top: 20.5rem;
+}
+
+.we-provide {
+	font-family: @header-font;
+	color: @backColred-txt;
+	font-size: 5rem;
+	line-height: 0.7;
+	margin-bottom: 3.3rem;
+	span {
+		font-family: @smHeader-font;
+		color: inherit;
+		font-size: 2.4rem;
+	}
+}
+
+.banner-freecons {
+	display: block;
+	width: 34rem;
+	color: @button-colr;
+	background-color: #f8cd53;
+	font-size: 2.6rem;
+	font-family: @button-font;
+	margin: auto;
+	padding: 1rem 0;
+	border-radius: @bgbord-radius;
+	&:hover {
+		color: @button-colr;
+		background-color: @button-hovr;
+	}
+
+}
+//				About Us
+.margin-bottom-12 {
+	margin-bottom: 12rem;
+}
+//			Mixin
+.headers-stripe(@color) {
+	position: relative;
+	text-align: center;
+	margin-bottom: 8rem;
+	.headers(@color);
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		border-right: 4rem solid;
+		border-bottom: 0.5rem solid @color;
+		left: 50%;
+		.transform-translate(translateX(-50%));
+		top: 7rem;
+	}
+}
+//	***************************
+.big-headers {
+	.headers-stripe(@nav-and-head);
+}
+
+.about-us-blocks {
+	text-align: center;
+	width: 28rem;
+	margin: 0 auto 6rem;
+}
+
+.about-us-h {
+	font-family: @header-font;
+	color: @nav-and-head;
+}
+
+.about-us-p {
+	font-family: @text-font;
+	color: @1text-colr;
+	font-size: 1.5rem;
+}
+
+//			Our Approch
+.approch-back {
+	background-color: #f3f3f3;
+	padding: 7rem 0 13rem;
+}
+//		Mixins
+.approch-blocks(@float) {
+	position: relative;
+	margin-bottom: 4rem;
+	img {
+		float: @float;
+		width: 34rem;
+		height: 23.5rem;
+	}
+}
+
+@squares: {
+	width: 10.5rem;
+	height: 10.5rem;
+	position: absolute;
+	background-color: @square-back;
+	border: @square-bord;
+	color: @backColred-txt;
+	font-family: helvetica, serif;
+	border-radius: @bgbord-radius;
+	text-align: center;
+	padding: 2.3rem 0;
+	top: 6.5rem;
+	h1 {
+		margin: 0;
+		line-height: 0.5;
+		font-weight: 800;
+		font-size: 4.7rem;
+	}
+
+	span {
+		font-weight: 400;
+		font-size: 2.2rem;
+	}
+};
+
+.cont-border(@float) {
+	border: @step-bord;
+	background-color: #ffffff;
+	float: @float;
+	width: 70%;
+	height: 23.5rem;
+	.box-shadow(0 0rem 0.5rem rgba(0,0,0,0.1));
+	padding: 4rem 7rem 0;
+}
+//		**************************
+.our-approch-blocks {
+	.approch-blocks(left);
+}
+
+.approch-content {
+	.cont-border(left);
+}
+
+.approch-h {
+	font-family: @header-font;
+	color: @nav-and-head;
+}
+
+.approch-p {
+	font-family: @text-font;
+	color: @1text-colr;
+	font-size: 1.5rem;
+}
+
+.red-square {
+	@squares();
+	left: 30.1rem;
+}
+
+//			Revert steps
+.our-approch-blocks-right {
+	.approch-blocks(right);
+}
+
+.approch-content-reverse {
+	.cont-border(right);
+	border-right: none;
+	text-align: right;
+}
+
+.red-square-right {
+	@squares();
+	right: 30.1rem;
+}
+
+//				Our Work
+.bunch-blocks-background {
+	background-color: @work-back;
+	padding: 11rem 0;
+}
+
+.big-headers-2 {
+	.headers-stripe(@backColred-txt);
+}
+
+.padding-right-0 {
+	padding-right: 0;
+}
+
+.padding-left-0 {
+	padding-left: 0;
+}
+
+.padding-0 {
+	padding: 0;
+}
+
+.project-name {
+	float: left;
+	background-color: #f35e59;
+	color: @backColred-txt;
+	font-family: @header-font;
+	width: 50%;
+	height: 25.5rem;
+	padding-top: 11.5rem;
+	text-align: center;
+}
+
+.project-name-h {
+	position: relative;
+	line-height: 0.9;
+	span {
+		font-size: 1.9rem;
+	}
+	&:before {
+		content: "\f1d9";
+		display: block;
+		position: absolute;
+		font-family: FontAwesome;
+		color: #f9bab8;
+		font-size: 4rem;
+		top: -6rem;
+		left: 11.5rem;
+	}
+}
+
+.project-img {
+	width: 50%;
+	height: 25.5rem;
+	float: left;
+}
+//			Free Analysis
+.analysis-background {
+	background-color: @analysis-colr;
+	padding: 8rem 0 11rem;
+}
+
+.analys-header {
+	.headers(@backColred-txt);
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.details-button {
+	display: block;
+	width: 7rem;
+	height: 7rem;
+	border-radius: 100%;
+	border: @square-bord;
+	padding-top: 0.3rem;
+	margin: 0 auto 5rem;
+	text-align: center;
+	color: @backColred-txt;
+	font-size: 4.5rem;
+	cursor: default;
+	&:focus {
+		color: @backColred-txt;
+	}
+	&:visited {
+		color: @backColred-txt;
+	}
+}
+
+.inactiveDetail {
+	cursor: pointer;
+	font-size: 3rem;
+	padding-top: 1.3rem;
+	.transition(background-color 0.3s linear, color 0.3s linear);
+	&:hover {
+		color: @analysis-colr;
+		background-color: @white-back;
+		.transition(background-color 0s step-start, color 0s step-start);
+	}
+}
+
+.analysis-data {
+	position: relative;
+	width: 68.5rem;
+	background-color: @white-back;
+	border-radius: @bord-radius;
+	padding: 5rem 7rem 7rem;
+	text-align: center;
+	margin: auto;
+}
+
+.analys-close {
+	width: 5rem;
+	height: 5rem;
+	display: block;
+	position: absolute;
+	background-color: @button-back;
+	border: @square-bord;
+	border-radius: 100%;
+	color: @button-colr;
+	text-align: center;
+	font-size: 2.3rem;
+	padding-top: 0.6rem;
+	font-family: OpenSansRegular;
+	right: -3rem;
+	top: -2rem;
+	&:hover {
+		color: @button-colr;
+		background-color: @button-hovr;
+	}
+}
+
+.analysis-data-p {
+	font-family: helvetica, serif;
+	color: @1text-colr;
+	margin-bottom: 4rem;
+}
+
+.analysis-input {
+	width: 87%;
+	height: 5rem;
+	border: @input-bord;
+	border-radius: @bord-radius;
+	color: @input-colr;
+	font-family: helvetica, serif;
+	padding-left: 2rem;
+	margin-bottom: 1rem;	
+}
+
+.analysis-submit {
+	display: block;
+	background-color: @button-back;
+	color: @button-colr;
+	border: none;
+	border-radius: @bord-radius;
+	font-family: @button-font;
+	font-size: 1.6rem;
+	margin: 3rem auto 0;
+	padding: 1.2rem 3rem;
+	&:hover {
+		background-color: @button-hovr;
+	}
+}
+//				Footer
+.footer-background {
+	background-color: @footer-back;
+	padding: 6rem 0 8rem;
+}
+
+.footer-header {
+	color: @backColred-txt;
+	font-family: @header-font;
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.social-net {
+	text-align: center;
+	margin-bottom: 3.5rem;
+	li {
+		display: inline-block;
+		margin-right: 1.5rem;
+		a {
+			display: block;
+			width: 4.5rem;
+			height: 4.5rem;
+			border: @footer-bord;
+			border-radius: @bord-radius;
+			color: @backColred-txt;
+			font-size: 2rem;
+			padding-top: 0.7rem;
+			text-align: center;
+			&:hover {
+				color: @backColred-txt;
+				border-color: #de2b24;
+			}
+		}
+	}
+}
+
+.subscribe-news {
+	color: @footer-text;
+	font-family: @text-font;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.footer-input {
+	display: block;
+	width: 68rem;
+	height: 5rem;
+	padding-left: 2rem;
+	font-family: @text-font;
+	font-size: 1.5rem;
+	border: none;
+	color: @footer-text;
+	margin: 0 auto 3rem;
+	background-color: @input-back;
+}
+
+.footer-submit {
+	display: block;
+	border: @footer-bord;
+	border-radius: @bord-radius;
+	color: @button-colr;
+	background-color: @footer-back;
+	padding: 1.3rem 3.3rem;
+	font-size: 1.6rem;
+	font-family: @button-font;
+	margin: auto;
+	&:hover {
+		border-color: #de2b24;
+	}
+}
+
+.cssauthor {
+	background-color: @input-back;
+	text-align: center;
+	padding: 1.5rem;
+	a {
+		color: @footer-text;
+		font-family: @text-font;
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	.nmenu {
+		float: right;
+		margin-bottom: 4.5rem;
+		li:last-child {
+			a {
+				margin-right: 0;
+			}
+		}
+	}
+	.approch-content, .approch-content-reverse {
+		width: 63%;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.contact-facebook {
+		margin-right: 0;
+	}
+	
+	.navbar-collapse {
+		padding: 0;
+	}
+
+	.nmenu li {
+		a {
+			margin-right: 3rem;
+		}
+		&:nth-child(-n+3) {
+			&:after {
+				display: none;
+			}
+		}
+	}
+	.our-approch-blocks-right img, .our-approch-blocks img {
+		width: 26rem;
+	}
+
+	.red-square {
+		left: 22.1rem;
+	}
+
+	.red-square-right {
+		right: 22.1rem;
+	}
+
+	.padding-left-0 {
+		padding-left: 15px;
+	}
+
+	.padding-right-0 {
+		padding-right: 15px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.red-hat-logotype {
+		width: 6rem;
+	}
+
+	.text-logotype {
+		font-size: 3rem;
+	}
+
+	.navbar {
+		margin-bottom: 0;
+	}
+
+	.navbar-toggle {
+		background-color: #636363;
+		padding: 1.1rem 1.3rem;
+		margin-right: 0;
+		margin-top: 0;
+
+		.icon-bar {
+		background-color: #ffffff;
+		width: 3.3rem;
+		height: 0.3rem;
+		}
+
+		.icon-bar+.icon-bar {
+		margin-top: 0.5rem;
+		}
+	}
+
+	button.collapsed {
+		background-color: #515151;
+	}
+
+	.navbar-collapse {
+		padding: 0 25px 1.5rem;
+		position: absolute;
+		z-index: 9;
+		top: 7rem;
+		right: 0rem;
+		background-color: rgba(255, 255, 255, 0.8);
+		border-radius: 4px;
+		box-shadow: 0 0 0.3rem;
+	}
+
+	.nmenu {
+		float: none;
+		text-align: center;
+		padding-bottom: 1rem;
+		border-bottom: 0.1rem solid @nav-and-head;
+		margin-bottom: 3.5rem;
+		li {
+			a {
+				margin: 0;
+				padding: 1.9rem 0;
+				&:focus {
+					background-color: transparent;
+				}
+				&:visited {
+					background-color: transparent;
+				}
+				&:hover {
+					background-color: rgba(255,255,255,0.5);
+					border-radius: @bord-radius;
+				}
+			}
+		}
+	}
+
+	.nav-freecons {
+		float: none;
+	}
+
+	.our-approch-blocks-right, .our-approch-blocks {
+		margin-bottom: 6rem;
+
+		img {
+			float: none;
+			display: block;
+			margin: 0 auto;
+			.box-shadow(0 0rem 1rem rgba(0,0,0,0.5));
+		}
+	}
+
+	.approch-content, .approch-content-reverse {
+		width: 100%;
+		text-align: center;
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	.red-square, .red-square-right {
+		top: 17.5rem;
+		left: 50%;
+		.transform-translate(translateX(-50%));
+	}
+
+	.analysis-data {
+		width: 92%;
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	.analysis-input {
+		width: 95%;
+	}
+	
+	.footer-input {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.dash-phone {
+		&:after {
+			top: 10rem;
+		}
+	}
+}
