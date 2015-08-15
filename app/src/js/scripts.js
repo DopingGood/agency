@@ -3,13 +3,15 @@ $(document).ready(function() {
 	$detailToggle = function() {
 		$(".details-button i").toggleClass("fa-angle-down fa-plus");
 	};
+	$(".details-button").css("poinnter-events", "none");
 	//	Close of Facebook Analysis
 	$(".analys-close").click(function(e) {
 		e.preventDefault();
 		$(".analys-close").hide(100);
 		$(".analysis-data").slideUp();
-		$(".analysis-data").find("input").value= "";
+		$(".analysis-data").find("input").value = "";
 		$(".details-button").addClass("inactiveDetail");
+		$(".details-button").css("pointer-events", "auto");
 		$detailToggle();
 	});
 	// Open of Facebook Analysis
@@ -19,6 +21,7 @@ $(document).ready(function() {
 			$(".analysis-data").slideDown();
 			$(".details-button").removeClass("inactiveDetail");
 			$detailToggle();
+			$(".details-button").prop("pointer-events", "none");
 			$(".analys-close").show(1000, ["easeOutQuart"]);
 		}
 	});
@@ -34,7 +37,6 @@ $(document).ready(function() {
 		else if (windowWidth > 750) {
 			window.scrollTo(0, sm);
 		}
-
 		else {
 			window.scrollTo(0, xs);
 		}
@@ -59,5 +61,4 @@ $(document).ready(function() {
 		e.preventDefault();
 		$scroll(3030, 3100, 3400, 4600);
 	});
-
 });

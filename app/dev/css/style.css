@@ -70,10 +70,18 @@ button:focus {
   background-color: #1287bf;
   border-radius: 0.3rem;
   margin-right: 3rem;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
 }
 .contact-facebook:hover {
   background-color: #de2b24;
   color: #ffffff;
+  transition: all 0s linear;
+  -webkit-transition: all 0s linear;
+  -o-transition: all 0s linear;
+  -moz-transition: all 0s linear;
 }
 .phone-number {
   position: relative;
@@ -124,6 +132,10 @@ button:focus {
   color: #424242;
   font-family: LiberationSansBold;
   font-size: 1.6rem;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
 }
 .nmenu li a:focus {
   background-color: transparent;
@@ -134,6 +146,10 @@ button:focus {
 .nmenu li a:hover {
   color: #de2b24;
   background-color: transparent;
+  transition: all 0s linear;
+  -webkit-transition: all 0s linear;
+  -o-transition: all 0s linear;
+  -moz-transition: all 0s linear;
 }
 .nmenu li:nth-child(-n+3):after {
   content: "\f111";
@@ -156,10 +172,18 @@ button:focus {
   background: #de2b24;
   color: #ffffff;
   border-radius: 0.3rem;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
 }
 .nav-freecons:hover {
   background-color: #1287bf;
   color: #ffffff;
+  transition: all 0s linear;
+  -webkit-transition: all 0s linear;
+  -o-transition: all 0s linear;
+  -moz-transition: all 0s linear;
 }
 .banner-background {
   position: relative;
@@ -205,10 +229,18 @@ button:focus {
   margin: auto;
   padding: 1rem 0;
   border-radius: 0.5rem;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
 }
 .banner-freecons:hover {
   color: #ffffff;
   background-color: #1287bf;
+  transition: all 0s linear;
+  -webkit-transition: all 0s linear;
+  -o-transition: all 0s linear;
+  -moz-transition: all 0s linear;
 }
 .margin-bottom-12 {
   margin-bottom: 12rem;
@@ -398,6 +430,7 @@ button:focus {
   padding: 0;
 }
 .project-name {
+  display: block;
   float: left;
   background-color: #f35e59;
   color: #ffffff;
@@ -406,6 +439,15 @@ button:focus {
   height: 25.5rem;
   padding-top: 11.5rem;
   text-align: center;
+}
+.project-name:focus {
+  color: #ffffff;
+}
+.project-name:visited {
+  color: #ffffff;
+}
+.project-name:hover {
+  color: #ffffff;
 }
 .project-name-h {
   position: relative;
@@ -457,11 +499,15 @@ button:focus {
   color: #ffffff;
   font-size: 4.5rem;
   cursor: default;
+  pointer-events: none;
 }
 .details-button:focus {
   color: #ffffff;
 }
 .details-button:visited {
+  color: #ffffff;
+}
+.details-button:hover {
   color: #ffffff;
 }
 .inactiveDetail {
@@ -505,10 +551,18 @@ button:focus {
   font-family: OpenSansRegular;
   right: -3rem;
   top: -2rem;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
 }
 .analys-close:hover {
   color: #ffffff;
   background-color: #1287bf;
+  transition: all 0s linear;
+  -webkit-transition: all 0s linear;
+  -o-transition: all 0s linear;
+  -moz-transition: all 0s linear;
 }
 .analysis-data-p {
   font-family: helvetica, serif;
@@ -535,9 +589,23 @@ button:focus {
   font-size: 1.6rem;
   margin: 3rem auto 0;
   padding: 1.2rem 3rem;
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+}
+.analysis-submit:focus {
+  background-color: #1287bf;
+}
+.analysis-submit:visited {
+  background-color: #1287bf;
 }
 .analysis-submit:hover {
   background-color: #1287bf;
+  transition: all 0s linear;
+  -webkit-transition: all 0s linear;
+  -o-transition: all 0s linear;
+  -moz-transition: all 0s linear;
 }
 .footer-background {
   background-color: #2a2a2a;
@@ -601,8 +669,17 @@ button:focus {
   font-family: LiberationSansBold;
   margin: auto;
 }
+.footer-submit:focus {
+  border-color: #de2b24;
+  background-color: #2a2a2a;
+}
+.footer-submit:visited {
+  background-color: #de2b24;
+  background-color: #2a2a2a;
+}
 .footer-submit:hover {
   border-color: #de2b24;
+  background-color: #2a2a2a;
 }
 .cssauthor {
   background-color: #515151;

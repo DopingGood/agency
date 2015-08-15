@@ -41,18 +41,25 @@ button:focus {
 	-moz-box-shadow: @attr;
 }
 
-.transition(@value, @value2) {
-	transition: @value, @value2;
-	-webkit-transition: @value, @value2;
-	-o-transition: @value, @value2;
-	-moz-transition: @value, @value2;
+.simple-transition(@prop) {
+	transition: @prop;
+	-webkit-transition: @prop;
+	-o-transition: @prop;
+	-moz-transition: @prop;
 }
 
-.transform-translate(@value) {
-	transform: @value;
-	-webkit-transform: @value;
-	-o-transform: @value;
-	-moz-transform: @value;
+.transition(@prop, @prop2) {
+	transition: @prop, @prop2;
+	-webkit-transition: @prop, @prop2;
+	-o-transition: @prop, @prop2;
+	-moz-transition: @prop, @prop2;
+}
+
+.transform-translate(@prop) {
+	transform: @prop;
+	-webkit-transform: @prop;
+	-o-transform: @prop;
+	-moz-transform: @prop;
 }
 //				Header
 .contacts-background {
@@ -109,9 +116,11 @@ button:focus {
 	background-color: @contact-faceb;
 	border-radius: @bord-radius;
 	margin-right: 3rem;
+	.simple-transition(all 0.2s linear);
 	&:hover {
 		background-color: @button-back;
 		color: @backColred-txt;
+		.simple-transition(all 0s linear);
 	}
 }
 
@@ -157,6 +166,7 @@ button:focus {
 			color: @nav-and-head;
 			font-family: @navbar-font;
 			font-size: 1.6rem;
+			.simple-transition(all 0.3s linear);
 			&:focus {
 				background-color: transparent;
 			}
@@ -166,6 +176,7 @@ button:focus {
 			&:hover {
 				color: @nav-hover;
 				background-color: transparent;
+				.simple-transition(all 0s linear);
 			}
 		}
 		&:nth-child(-n+3) {
@@ -194,9 +205,11 @@ button:focus {
 	background: @button-back;
 	color: @button-colr;
 	border-radius: @bord-radius;
+	.simple-transition(all 0.2s linear);
 	&:hover {
 		background-color: @button-hovr;
 		color: @button-colr;
+		.simple-transition(all 0s linear);
 	}
 }
 //			Banner
@@ -245,9 +258,11 @@ button:focus {
 	margin: auto;
 	padding: 1rem 0;
 	border-radius: @bgbord-radius;
+	.simple-transition(all 0.2s linear);
 	&:hover {
 		color: @button-colr;
 		background-color: @button-hovr;
+		.simple-transition(all 0s linear);
 	}
 
 }
@@ -408,6 +423,7 @@ button:focus {
 }
 
 .project-name {
+	display: block;
 	float: left;
 	background-color: #f35e59;
 	color: @backColred-txt;
@@ -416,6 +432,15 @@ button:focus {
 	height: 25.5rem;
 	padding-top: 11.5rem;
 	text-align: center;
+	&:focus {
+		color: @backColred-txt;
+	}
+	&:visited {
+		color: @backColred-txt;
+	}
+	&:hover {
+		color: @backColred-txt;
+	}
 }
 
 .project-name-h {
@@ -465,10 +490,14 @@ button:focus {
 	color: @backColred-txt;
 	font-size: 4.5rem;
 	cursor: default;
+	pointer-events: none;
 	&:focus {
 		color: @backColred-txt;
 	}
 	&:visited {
+		color: @backColred-txt;
+	}
+	&:hover {
 		color: @backColred-txt;
 	}
 }
@@ -510,9 +539,11 @@ button:focus {
 	font-family: OpenSansRegular;
 	right: -3rem;
 	top: -2rem;
+	.simple-transition(all 0.2s linear);
 	&:hover {
 		color: @button-colr;
 		background-color: @button-hovr;
+		.simple-transition(all 0s linear);
 	}
 }
 
@@ -543,8 +574,16 @@ button:focus {
 	font-size: 1.6rem;
 	margin: 3rem auto 0;
 	padding: 1.2rem 3rem;
+	.simple-transition(all 0.2s linear);
+	&:focus {
+		background-color: @button-hovr;
+	}
+	&:visited {
+		background-color: @button-hovr;
+	}
 	&:hover {
 		background-color: @button-hovr;
+		.simple-transition(all 0s linear);
 	}
 }
 //				Footer
@@ -614,8 +653,18 @@ button:focus {
 	font-size: 1.6rem;
 	font-family: @button-font;
 	margin: auto;
+	@footer-border: #de2b24;
+	&:focus {
+		border-color: @footer-border;
+		background-color: @footer-back;
+	}
+	&:visited {
+		background-color: @footer-border;
+		background-color: @footer-back;
+	}
 	&:hover {
-		border-color: #de2b24;
+		border-color: @footer-border;
+		background-color: @footer-back;
 	}
 }
 
