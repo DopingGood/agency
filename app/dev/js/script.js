@@ -26,39 +26,12 @@ $(document).ready(function() {
 		}
 	});
 	//	Landing
-	$scroll = function (lg, md, sm, xs) {
-		var windowWidth = $(window).width();
-		if (windowWidth > 1182) {
-			window.scrollTo(0, lg);
-		}
-		else if (windowWidth > 974) {
-			window.scrollTo(0, md);
-		}
-		else if (windowWidth > 750) {
-			window.scrollTo(0, sm);
-		}
-		else {
-			window.scrollTo(0, xs);
-		}
-	};
-
-	$(".navbar-home").click(function(e) {
+	$(".navbar-about, .navbar-approach, .navbar-works").click(function (e) {
 		e.preventDefault();
-		$scroll(0, 0, 0, 0);
-	});
-
-	$(".navbar-about").click(function(e) {
-		e.preventDefault();
-		$scroll(800, 900, 900, 900);
-	});
-
-	$(".navbar-approach").click(function(e) {
-		e.preventDefault();
-		$scroll(1450, 1500, 1800, 2000);
-	});
-
-	$(".navbar-works").click(function(e) {
-		e.preventDefault();
-		$scroll(3030, 3100, 3400, 4600);
+		var dest = 0;
+		dest = $(this.hash).offset().top;
+		$('html,body').animate({
+			scrollTop: dest
+		}, 500, 'swing');
 	});
 });
